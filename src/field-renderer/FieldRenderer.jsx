@@ -34,6 +34,7 @@ const FormFieldRenderer = (props) => {
             className={className}
             as="select"
             name={fieldData.name}
+            required={fieldData.required}
             value={value}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
@@ -64,6 +65,7 @@ const FormFieldRenderer = (props) => {
             as="textarea"
             name={fieldData.name}
             value={value}
+            required={fieldData.required}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             floatingLabel={fieldData.label}
@@ -86,6 +88,7 @@ const FormFieldRenderer = (props) => {
             className={className}
             name={fieldData.name}
             value={value}
+            required={fieldData.required}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             floatingLabel={fieldData.label}
@@ -110,6 +113,7 @@ const FormFieldRenderer = (props) => {
             checked={!!value}
             name={fieldData.name}
             value={value}
+            required={fieldData.required}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             onBlur={handleOnBlur}
