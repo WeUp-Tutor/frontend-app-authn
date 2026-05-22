@@ -109,7 +109,9 @@ const ConfigurableRegistrationForm = (props) => {
     setFieldErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
   };
 
+  console.log('123')
   if (flags.showConfigurableRegistrationFields) {
+    console.log('456')
     Object.keys(fieldDescriptions).forEach(fieldName => {
       const fieldData = fieldDescriptions[fieldName];
       switch (fieldData.name) {
