@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Form, Icon } from '@openedx/paragon';
 import { ExpandMore } from '@openedx/paragon/icons';
@@ -10,6 +10,11 @@ const FormFieldRenderer = (props) => {
     className, errorMessage, fieldData, onChangeHandler, isRequired, value,
   } = props;
 
+
+  const [touched, setTouched] = useState(false);
+  const hasError = touched && !value.trim();
+
+
   console.log('fieldData')
   console.log(fieldData)
   console.log(fieldData.required)
@@ -17,12 +22,15 @@ const FormFieldRenderer = (props) => {
   console.log('errorMessage')
   console.log(errorMessage)
 
+
+
   const handleFocus = (e) => {
     if (props.handleFocus) { props.handleFocus(e); }
   };
 
   const handleOnBlur = (e) => {
     if (props.handleBlur) { props.handleBlur(e); }
+    setTouched(true)
   };
 
   switch (fieldData.type) {
@@ -38,9 +46,6 @@ const FormFieldRenderer = (props) => {
             name={fieldData.name}
             required={fieldData.required}
             value={value}
-
-            isInvalid={fieldData.required && Boolean(errorMessage)}
-
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             trailingElement={<Icon src={ExpandMore} />}
@@ -94,17 +99,21 @@ const FormFieldRenderer = (props) => {
             name={fieldData.name}
             value={value}
             required={fieldData.required}
+
+            isInvalid={fieldData.required && Boolean(errorMessage)}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             floatingLabel={fieldData.label}
             onBlur={handleOnBlur}
             onFocus={handleFocus}
           />
-          {isRequired && errorMessage && (
+
+          {isRequired && errorMessage && hasError && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
-              {errorMessage}
+              {fieldData.error_messages}
             </Form.Control.Feedback>
           )}
+
         </Form.Group>
       );
       break;
