@@ -19,8 +19,8 @@ const FormFieldRenderer = (props) => {
   console.log(fieldData)
   console.log(fieldData.required)
   console.log(isRequired)
-  console.log('errorMessage')
-  console.log(errorMessage)
+
+  console.log(hasError)
 
 
 
@@ -108,7 +108,7 @@ const FormFieldRenderer = (props) => {
             onFocus={handleFocus}
           />
 
-          {isRequired && errorMessage && hasError && (
+          {isRequired && hasError && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
               {fieldData.error_messages}
             </Form.Control.Feedback>
