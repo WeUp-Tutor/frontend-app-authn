@@ -157,7 +157,7 @@ const ConfigurableRegistrationForm = (props) => {
                 onChangeHandler={handleOnChange}
                 handleBlur={handleOnBlur}
                 handleFocus={handleOnFocus}
-                errorMessage={fieldErrors[fieldData.name]}
+                errorMessage={fieldData.error_messages || ''}
                 isRequired
               />
             </span>,
