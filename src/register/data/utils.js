@@ -38,9 +38,13 @@ export const isFormValid = (
 ) => {
   const fieldErrors = { ...errors };
   let isValid = true;
+
   let emailSuggestion = { suggestion: '', type: '' };
 
+  console.log(payload)
+
   Object.keys(payload).forEach(key => {
+
 
     console.log('key')
     console.log(key)
@@ -103,7 +107,8 @@ export const isFormValid = (
 
       console.log("key 2")
       console.log(key)
-      console.log(configurableFormFields[key])
+      console.log(fieldDescriptions)
+      console.log(fieldDescriptions[key])
 
       fieldErrors[key] = fieldDescriptions[key].error_message;
 
