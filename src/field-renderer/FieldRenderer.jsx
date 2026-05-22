@@ -39,14 +39,14 @@ const FormFieldRenderer = (props) => {
         return null;
       }
       formField = (
-        <Form.Group controlId={fieldData.name} isInvalid={!!(isRequired && errorMessage)}>
+        <Form.Group controlId={fieldData.name} isInvalid={!!(isRequired && hasError)}>
           <Form.Control
             className={className}
             as="select"
             name={fieldData.name}
             required={fieldData.required}
             value={value}
-            aria-invalid={isRequired && Boolean(errorMessage)}
+            aria-invalid={isRequired && hasError}
             onChange={(e) => onChangeHandler(e)}
             trailingElement={<Icon src={ExpandMore} />}
             floatingLabel={fieldData.label}
@@ -58,9 +58,9 @@ const FormFieldRenderer = (props) => {
               <option className="data-hj-suppress" key={option[0]} value={option[0]}>{option[1]}</option>
             ))}
           </Form.Control>
-          {isRequired && errorMessage && fieldData.required && (
+          {isRequired && hasError && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
-              {errorMessage}
+              {fieldData.error_messages}
             </Form.Control.Feedback>
           )}
         </Form.Group>
@@ -82,9 +82,9 @@ const FormFieldRenderer = (props) => {
             onBlur={handleOnBlur}
             onFocus={handleFocus}
           />
-          {isRequired && errorMessage && (
+          {isRequired && hasError && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
-              {errorMessage}
+              {fieldData.error_messages}
             </Form.Control.Feedback>
           )}
         </Form.Group>
@@ -93,21 +93,19 @@ const FormFieldRenderer = (props) => {
     }
     case 'text': {
       formField = (
-        <Form.Group controlId={fieldData.name} isInvalid={!!(isRequired && errorMessage)}>
+        <Form.Group controlId={fieldData.name} isInvalid={!!(isRequired && hasError)}>
           <Form.Control
             className={className}
             name={fieldData.name}
             value={value}
             required={fieldData.required}
-
-            isInvalid={fieldData.required && Boolean(errorMessage)}
-            aria-invalid={isRequired && Boolean(errorMessage)}
+            isInvalid={fieldData.required && hasError}
+            aria-invalid={isRequired && hasError}
             onChange={(e) => onChangeHandler(e)}
             floatingLabel={fieldData.label}
             onBlur={handleOnBlur}
             onFocus={handleFocus}
           />
-
           {isRequired && hasError && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
               {fieldData.error_messages}
@@ -127,7 +125,6 @@ const FormFieldRenderer = (props) => {
             checked={!!value}
             name={fieldData.name}
             value={value}
-            required={fieldData.required}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             onBlur={handleOnBlur}
