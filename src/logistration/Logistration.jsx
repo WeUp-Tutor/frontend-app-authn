@@ -99,9 +99,6 @@ const Logistration = (props) => {
   return (
     <BaseContainer>
       <div>
-        <p style={{ color: 'red', fontSize: '32px', fontWeight: 'bold' }}>
-          TEST AUTHN GITHUB 222
-        </p>
         {disablePublicAccountCreation
           ? (
             <>
