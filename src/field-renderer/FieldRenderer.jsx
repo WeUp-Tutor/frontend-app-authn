@@ -14,7 +14,7 @@ const FormFieldRenderer = (props) => {
   console.log(fieldData)
   console.log(fieldData.required)
   console.log(isRequired)
-  console.lof('errorMessage')
+  console.log('errorMessage')
   console.log(errorMessage)
 
   const handleFocus = (e) => {
