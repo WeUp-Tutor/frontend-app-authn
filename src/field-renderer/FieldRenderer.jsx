@@ -12,8 +12,10 @@ const FormFieldRenderer = (props) => {
 
   console.log('fieldData')
   console.log(fieldData)
-  console.log(errorMessage)
+  console.log(fieldData.required)
   console.log(isRequired)
+  console.lof('errorMessage')
+  console.log(errorMessage)
 
   const handleFocus = (e) => {
     if (props.handleFocus) { props.handleFocus(e); }
@@ -36,6 +38,9 @@ const FormFieldRenderer = (props) => {
             name={fieldData.name}
             required={fieldData.required}
             value={value}
+
+            isInvalid={fieldData.required && Boolean(errorMessage)}
+
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             trailingElement={<Icon src={ExpandMore} />}
@@ -48,7 +53,7 @@ const FormFieldRenderer = (props) => {
               <option className="data-hj-suppress" key={option[0]} value={option[0]}>{option[1]}</option>
             ))}
           </Form.Control>
-          {isRequired && errorMessage && (
+          {isRequired && errorMessage && fieldData.required && (
             <Form.Control.Feedback id={`${fieldData.name}-error`} type="invalid" className="form-text-size" hasIcon={false}>
               {errorMessage}
             </Form.Control.Feedback>
