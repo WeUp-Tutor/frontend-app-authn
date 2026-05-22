@@ -38,17 +38,9 @@ export const isFormValid = (
 ) => {
   const fieldErrors = { ...errors };
   let isValid = true;
-
   let emailSuggestion = { suggestion: '', type: '' };
 
-  console.log(payload)
-
   Object.keys(payload).forEach(key => {
-
-
-    console.log('key')
-    console.log(key)
-
     switch (key) {
     case 'name':
       if (!fieldErrors.name) {
@@ -104,14 +96,7 @@ export const isFormValid = (
     if (key === 'country' && !configurableFormFields?.country?.displayValue) {
       fieldErrors[key] = formatMessage(messages['empty.country.field.error']);
     } else if (!configurableFormFields[key]) {
-
-      console.log("key 2")
-      console.log(key)
-      console.log(fieldDescriptions)
-      console.log(fieldDescriptions[key])
-
-      fieldErrors[key] = fieldDescriptions[key].error_message;
-
+      fieldErrors[key] = fieldDescriptions[key].exposed;
     }
     if (fieldErrors[key]) { isValid = false; }
   });
