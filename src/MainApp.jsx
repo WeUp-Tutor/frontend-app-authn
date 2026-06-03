@@ -37,9 +37,7 @@ const MainApp = () => (
       <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
     </Helmet>
 
-    <div>Ceci remplace Zendesk
-    </div>
-#    {getConfig().ZENDESK_KEY && <Zendesk />}
+    {getConfig().ZENDESK_KEY && <Zendesk />}
 
     <Routes>
       <Route path="/" element={<Navigate replace to={updatePathWithQueryParams(REGISTER_PAGE)} />} />
