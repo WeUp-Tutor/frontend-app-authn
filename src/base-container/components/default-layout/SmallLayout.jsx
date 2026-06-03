@@ -11,6 +11,9 @@ const SmallLayout = () => {
   const { formatMessage } = useIntl();
 
   return (
+
+    <>
+{/*
     <span className="bg-primary-400 w-100">
       <div className="col-md-12 small-screen-top-stripe" />
       <div>
@@ -19,6 +22,7 @@ const SmallLayout = () => {
         </Hyperlink>
         <div className="d-flex align-items-center m-3.5">
           <div className={classNames({ 'small-yellow-line mr-n2.5': getConfig().SITE_NAME === 'edX' })} />
+
           <h1
             className={classNames(
               'text-white mt-3.5 mb-3.5',
@@ -31,9 +35,12 @@ const SmallLayout = () => {
               </span>
             </span>
           </h1>
+
         </div>
       </div>
     </span>
+*/}
+    </>
   );
 };
 

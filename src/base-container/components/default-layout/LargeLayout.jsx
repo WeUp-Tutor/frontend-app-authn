@@ -11,6 +11,9 @@ const LargeLayout = () => {
   const { formatMessage } = useIntl();
 
   return (
+    <>
+{/*
+
     <div className="w-50 d-flex">
       <div className="col-md-9 bg-primary-400">
         <Hyperlink destination={getConfig().MARKETING_SITE_BASE_URL}>
@@ -18,6 +21,7 @@ const LargeLayout = () => {
         </Hyperlink>
         <div className="min-vh-100 d-flex align-items-center">
           <div className={classNames({ 'large-yellow-line mr-n4.5': getConfig().SITE_NAME === 'edX' })} />
+
           <h1
             className={classNames(
               'display-2 text-white mw-xs',
@@ -39,6 +43,8 @@ const LargeLayout = () => {
         </svg>
       </div>
     </div>
+*/}
+    </>
   );
 };
 
