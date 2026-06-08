@@ -113,10 +113,6 @@ const ConfigurableRegistrationForm = (props) => {
     Object.keys(fieldDescriptions).forEach(fieldName => {
       const fieldData = fieldDescriptions[fieldName];
 
-      console.log('dans Config..')
-      console.log(fieldData)
-      console.log(fieldErrors)
-
       switch (fieldData.name) {
         case FIELDS.COUNTRY:
           showCountryField = true;

@@ -14,16 +14,6 @@ const FormFieldRenderer = (props) => {
   const [touched, setTouched] = useState(false);
   const hasError = touched && !value.trim();
 
-
-  console.log('fieldData')
-  console.log(fieldData)
-  console.log(fieldData.required)
-  console.log(isRequired)
-
-  console.log(hasError)
-
-
-
   const handleFocus = (e) => {
     if (props.handleFocus) { props.handleFocus(e); }
   };

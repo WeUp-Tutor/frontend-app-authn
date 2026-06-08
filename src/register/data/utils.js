@@ -97,9 +97,6 @@ export const isFormValid = (
       fieldErrors[key] = formatMessage(messages['empty.country.field.error']);
     } else if (!configurableFormFields[key] && fieldDescriptions[key].exposed === 'required' ) {
       fieldErrors[key] = fieldDescriptions[key].exposed;
-      console.log("key 2")
-      console.log(key)
-      console.log(fieldDescriptions[key].exposed)
     }
     if (fieldErrors[key]) { isValid = false; }
   });
