@@ -5,6 +5,9 @@ import { ExpandMore } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
 const FormFieldRenderer = (props) => {
+
+  console.log('authn-mfe')
+
   let formField = null;
   const {
     className, errorMessage, fieldData, onChangeHandler, isRequired, value,
