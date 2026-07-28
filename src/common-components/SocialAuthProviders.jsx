@@ -7,7 +7,7 @@ import { Icon } from '@openedx/paragon';
 import { Login } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
 
-import ./socialauthproviders.css
+import './socialauthproviders.css';
 
 import messages from './messages';
 import { LOGIN_PAGE, SUPPORTED_ICON_CLASSES } from '../data/constants';
