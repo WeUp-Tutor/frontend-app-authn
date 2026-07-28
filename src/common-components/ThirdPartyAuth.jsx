@@ -39,10 +39,6 @@ const ThirdPartyAuth = (props) => {
   const enterpriseLoginURL = getConfig().LMS_BASE_URL + ENTERPRISE_LOGIN_URL;
   const isThirdPartyAuthActive = isSocialAuthActive || (isEnterpriseLoginDisabled && isInstitutionAuthActive);
 
-  console.log("dans TirdPartyAuth.jsx")
-  console.log(providers)
-
-
   return (
     <>
       {((isEnterpriseLoginDisabled && isInstitutionAuthActive) || isSocialAuthActive) && (
