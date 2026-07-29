@@ -53,7 +53,7 @@ const SocialAuthProviders = (props) => {
               </svg>
             </div>
             <span className="gsi-material-button-contents notranslate" aria-hidden="true">
-              {provider.name}
+              Se connecter avec Google
             </span>
           </div>
           <span className="sr-only">{srText}</span>
