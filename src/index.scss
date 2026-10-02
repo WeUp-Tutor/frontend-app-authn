@@ -4,9 +4,10 @@
 #root .layout {
   position: relative;
   background: #fff;
-  min-height: 80vh;
+  min-height: 100vh;
   overflow: hidden;
   padding: 50px;
+  align-items: center;
 }
 
 #root .layout:before,
@@ -44,6 +45,6 @@
   z-index: 1;
   background: #fff;
   padding:50px;
-
+  height: 400px;
 }
 
