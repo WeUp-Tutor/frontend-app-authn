@@ -1,11 +1,12 @@
 @use "@openedx/paragon/styles/css/core/custom-media-breakpoints" as paragonCustomMediaBreakpoints;
 @import "sass/style";
 
+
 #root .layout {
   position: relative;
   background: #fff;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   padding: 50px;
   align-items: center;
 }
@@ -14,27 +15,29 @@
 #root .layout:after {
   content: "";
   position: absolute;
-  top: auto;
-  left: auto;
   width: 400px;
   height: 400px;
   pointer-events: none;
   z-index: 0;
 }
 
+/* Ombre coin bas-gauche */
 #root .layout:before {
-  box-shadow: 400px 400px 143px 90px rgba(124, 26, 0, 0.7) !important;
+  bottom: -200px;
+  left: -200px;
+  box-shadow: 30px 30px 60px rgba(124, 26, 0, 0.7) !important;
 }
+
+/* Ombre coin haut-droite */
 #root .layout:after {
-  box-shadow: 400px -400px 143px 90px rgba(124, 26, 0, 0.7) !important;
-  left: -400px;
+  top: -200px;
+  right: -200px;
+  box-shadow: -30px -30px 60px rgba(124, 26, 0, 0.7) !important;
 }
+
 #root .layout .content #main-content .btn-brand {
   background-color: rgb(124, 26, 0);
-  top: -400px;
 }
-
-
 
 .extra-large-screen-top-stripe {
   display: none !important;
@@ -44,7 +47,9 @@
   border-radius: 50px 0;
   z-index: 1;
   background: #fff;
-  padding:50px;
+  padding: 50px;
   height: 400px;
+  position: relative;
+  overflow: visible;
 }
 
