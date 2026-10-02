@@ -1,6 +1,25 @@
 @use "@openedx/paragon/styles/css/core/custom-media-breakpoints" as paragonCustomMediaBreakpoints;
 @import "sass/style";
 
+#root .layout {
+  position: relative;
+  background: #fff;
+  min-height: 80vh;
+  overflow: hidden;
+  padding: 50px;
+}
+
+#root .layout:before,
+#root .layout:after {
+  content: "";
+  position: absolute;
+  top: auto;
+  left: auto;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 0;
+}
 
 #root .layout:before {
   box-shadow: 400px 400px 143px 90px rgba(124, 26, 0, 0.7) !important;
@@ -11,4 +30,20 @@
 }
 #root .layout .content #main-content .btn-brand {
   background-color: rgb(124, 26, 0);
+  top: -400px;
 }
+
+
+
+.extra-large-screen-top-stripe {
+  display: none !important;
+}
+
+.content {
+  border-radius: 50px 0;
+  z-index: 1;
+  background: #fff;
+  padding:50px;
+
+}
+
