@@ -11,30 +11,6 @@
   align-items: center;
 }
 
-#root .layout:before,
-#root .layout:after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Ombre coin bas-gauche */
-#root .layout:before {
-  bottom: -200px;
-  left: -200px;
-  box-shadow: 30px 30px 60px rgba(124, 26, 0, 0.7) !important;
-}
-
-/* Ombre coin haut-droite */
-#root .layout:after {
-  top: -200px;
-  right: -200px;
-  box-shadow: -30px -30px 60px rgba(124, 26, 0, 0.7) !important;
-}
-
 #root .layout .content #main-content .btn-brand {
   background-color: rgb(124, 26, 0);
 }
@@ -51,5 +27,6 @@
   height: 400px;
   position: relative;
   overflow: visible;
+  box-shadow : -230px 230px 260px #7c1a00b3 , 230px -230px 260px #7c1a00b3 !important;
 }
 
