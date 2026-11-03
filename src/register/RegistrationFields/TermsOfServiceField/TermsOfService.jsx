@@ -25,14 +25,15 @@ const TermsOfService = (props) => {
       >
         <FormattedMessage
           id="register.page.terms.of.service"
-          defaultMessage="I agree to the {platformName}&nbsp;{termsOfService}"
+          defaultMessage="j'accepte les {termsOfService} du service"
           description="Text that appears on registration form stating terms of service.
                        It is a legal document that users must agree to."
           values={{
             platformName: getConfig().SITE_NAME,
             termsOfService: (
               <Hyperlink variant="muted" destination={getConfig().TOS_LINK || '#'} target="_blank">
-                {formatMessage(messages['terms.of.service'])}
+{/*                {formatMessage(messages['terms.of.service'])}   */}
+                  conditions générales d'utilisation
               </Hyperlink>
             ),
           }}
