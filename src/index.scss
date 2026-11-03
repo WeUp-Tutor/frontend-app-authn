@@ -10,5 +10,21 @@
   left: -400px;
 }
 #root .layout .content #main-content .btn-brand {
-  background-color: rgb(29, 86, 89);
+  background-color: rgb(14, 46, 78);
+}
+
+
+#root {
+  background-image: url("/custom-theme-media/images/bckg_login.png");
+  background-position: bottom center;
+  background-size: contain;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+#root, .layout .content {
+  background-color: rgb(1, 123, 195);
+  padding: 30px 0px;
+  border-radius: 8px;
+  margin-top: calc(50vh - 210px);  
 }
