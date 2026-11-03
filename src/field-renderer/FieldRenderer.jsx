@@ -15,7 +15,19 @@ const FormFieldRenderer = (props) => {
 
 
   const [touched, setTouched] = useState(false);
-  const hasError = touched && !value.trim();
+
+//  const hasError = touched && !value.trim();
+  const normalizedValue = typeof value === 'boolean'
+    ? value
+    : (value || '');
+
+  const hasError = touched && (
+    typeof normalizedValue === 'boolean'
+      ? !normalizedValue
+      : !normalizedValue.trim()
+  );
+
+
 
   const handleFocus = (e) => {
     if (props.handleFocus) { props.handleFocus(e); }
@@ -115,9 +127,9 @@ const FormFieldRenderer = (props) => {
           <Form.Checkbox
             className={className}
             id={fieldData.name}
-            checked={!!value}
+            checked={!!normalizedValue}
             name={fieldData.name}
-            value={value}
+            value={normalizedValue}
             aria-invalid={isRequired && Boolean(errorMessage)}
             onChange={(e) => onChangeHandler(e)}
             onBlur={handleOnBlur}
