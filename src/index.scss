@@ -28,7 +28,7 @@
 }
 #root .layout .content {
   background-color: rgb(1, 123, 195);
-  padding: 30px 0px;
+  padding: 30px 50px;
   border-radius: 8px;
   margin-top: calc(50vh - 210px);  
   box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
@@ -37,7 +37,10 @@
 .content  .main-content {
   min-width:unset !important;
 }
-
+.content  .main-content h3 {
+  color: white;
+  text-align: center;
+}
 #root .layout .content #main-content .btn-brand {
   background-color: #0e2e4e;
   border: none;
@@ -48,7 +51,31 @@
 }
 
 
+.has-floating-label {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.has-floating-label > div:last-child {
+  position: relative; 
+  max-width: 125px;
+}
+.pgn__form-control-floating-label .pgn__form-control-floating-label-text {
+  padding : unset !important;
+  background-color: unset !important;
+  color: white;
+  transform: unset !important;  
+}
+
+#sign-in-form a {
+  color: white !important;
+  width: 100%;
+  margin-top: 15px;
+}
+
+
 .extra-large-screen-top-stripe {
   display:none !important;
 }
+
 
