@@ -17,14 +17,38 @@
 #root {
   background-image: url("./assets/images/bckg_login.png");
   background-position: bottom center;
-  background-size: contain;
+  background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
 }
 
-#root, .layout .content {
+
+#sign-in-form {
+  text-align:center;
+}
+#root .layout .content {
   background-color: rgb(1, 123, 195);
   padding: 30px 0px;
   border-radius: 8px;
   margin-top: calc(50vh - 210px);  
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
 }
+
+.content  .main-content {
+  min-width:unset !important;
+}
+
+#root .layout .content #main-content .btn-brand {
+  background-color: #0e2e4e;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+
+.extra-large-screen-top-stripe {
+  display:none !important;
+}
+
