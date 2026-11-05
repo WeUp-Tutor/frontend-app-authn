@@ -244,6 +244,17 @@ const LoginPage = (props) => {
             errorMessage={errors.password}
             floatingLabel={formatMessage(messages['login.password.label'])}
           />
+
+          <Link
+            id="forgot-password"
+            name="forgot-password"
+            className="btn btn-link font-weight-500 text-body"
+            to={updatePathWithQueryParams(RESET_PAGE)}
+            onClick={trackForgotPasswordLinkClick}
+          >
+            {formatMessage(messages['forgot.password'])}
+          </Link>
+
           <StatefulButton
             name="sign-in"
             id="sign-in"
@@ -258,15 +269,7 @@ const LoginPage = (props) => {
             onClick={handleSubmit}
             onMouseDown={(event) => event.preventDefault()}
           />
-          <Link
-            id="forgot-password"
-            name="forgot-password"
-            className="btn btn-link font-weight-500 text-body"
-            to={updatePathWithQueryParams(RESET_PAGE)}
-            onClick={trackForgotPasswordLinkClick}
-          >
-            {formatMessage(messages['forgot.password'])}
-          </Link>
+
           <ThirdPartyAuth
             currentProvider={currentProvider}
             providers={providers}

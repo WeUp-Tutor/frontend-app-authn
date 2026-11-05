@@ -13,6 +13,18 @@
   background-color: rgb(14, 46, 78);
 }
 
+.layout .content > div {
+  width: 100%;
+}
+.layout .content #main-content .mw-xs {
+  max-width: unset !important;
+}
+
+.pgn__form-group label {
+  font-size: larger;
+  font-weight: 700;
+}
+
 
 #root {
   background-image: url("./assets/images/bckg_login.png");
@@ -70,7 +82,8 @@
 #sign-in-form a {
   color: white !important;
   width: 100%;
-  margin-top: 15px;
+  margin: 15px 0 0 110px;
+  justify-content: unset;
 }
 
 
