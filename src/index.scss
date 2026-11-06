@@ -9,9 +9,6 @@
   box-shadow: 400px -400px 143px 90px rgba(29, 86, 89, 0.7) !important;
   left: -400px;
 }
-#root .layout .content #main-content .btn-brand {
-  background-color: rgb(14, 46, 78);
-}
 
 .layout .content > div {
   width: 100%;
@@ -60,6 +57,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: medium;
+  padding: 10px 22px;
 }
 
 
@@ -79,11 +77,21 @@
   transform: unset !important;  
 }
 
+#sign-in-form .pgn__form-group {
+  margin-bottom: 10px;
+}
+#sign-in-form .pgn__form-group input {
+  height: 2rem;
+  border: none;
+  border-radius: 1px;
+}
+
 #sign-in-form a {
   color: white !important;
   width: 100%;
-  margin: 15px 0 0 110px;
+  margin: 0 5px 35px 110px;
   justify-content: unset;
+  font-size: medium;
 }
 
 
