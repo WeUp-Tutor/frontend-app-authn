@@ -223,7 +223,16 @@ const LoginPage = (props) => {
           messageType={activationMsgType}
         />
         {showResetPasswordSuccessBanner && <ResetPasswordSuccess />}
+
         <Form id="sign-in-form" name="sign-in-form">
+          <ThirdPartyAuth
+            currentProvider={currentProvider}
+            providers={providers}
+            secondaryProviders={secondaryProviders}
+            handleInstitutionLogin={handleInstitutionLogin}
+            thirdPartyAuthApiStatus={thirdPartyAuthApiStatus}
+            isLoginPage
+          />
           <FormGroup
             name="emailOrUsername"
             value={formFields.emailOrUsername}
@@ -270,14 +279,6 @@ const LoginPage = (props) => {
             onMouseDown={(event) => event.preventDefault()}
           />
 
-          <ThirdPartyAuth
-            currentProvider={currentProvider}
-            providers={providers}
-            secondaryProviders={secondaryProviders}
-            handleInstitutionLogin={handleInstitutionLogin}
-            thirdPartyAuthApiStatus={thirdPartyAuthApiStatus}
-            isLoginPage
-          />
         </Form>
       </div>
     </>
