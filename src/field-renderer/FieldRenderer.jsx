@@ -15,8 +15,9 @@ const FormFieldRenderer = (props) => {
 
 
   const [touched, setTouched] = useState(false);
-  const hasError = touched && !value.trim();
-
+  const stringValue = typeof value === 'string' ? value : '';
+  const hasError = touched && !stringValue.trim();
+  
   const handleFocus = (e) => {
     if (props.handleFocus) { props.handleFocus(e); }
   };
@@ -85,6 +86,12 @@ const FormFieldRenderer = (props) => {
       break;
     }
     case 'text': {
+      const autoCompleteMap = {
+        birth_date: 'bday',
+        email: 'email',
+        username: 'username',
+      };
+      
       formField = (
         <Form.Group controlId={fieldData.name} isInvalid={!!(isRequired && hasError)}>
           <Form.Control
@@ -94,6 +101,7 @@ const FormFieldRenderer = (props) => {
             required={fieldData.required}
             isInvalid={fieldData.required && hasError}
             aria-invalid={isRequired && hasError}
+            autoComplete={autoCompleteMap[fieldData.name] || 'off'}
             onChange={(e) => onChangeHandler(e)}
             floatingLabel={fieldData.label}
             onBlur={handleOnBlur}
