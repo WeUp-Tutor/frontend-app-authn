@@ -66,6 +66,18 @@ export const isFormValid = (
       if (fieldErrors.email) { isValid = false; }
       break;
     }
+    case 'birth_date': {
+      const birthDate = payload.birth_date;
+      if (!birthDate || !/^\d{4}-\d{2}-\d{2}$/.test(birthDate)) {
+        fieldErrors.birth_date = 'Veuillez saisir une date de naissance valide.';
+        isValid = false;
+      }
+      if (payload.password && birthDate === payload.password) {
+        fieldErrors.birth_date = 'Valeur invalide pour la date de naissance.';
+        isValid = false;
+      }
+      break;
+    }    
     case 'username':
       if (!fieldErrors.username) {
         fieldErrors.username = validateUsername(payload.username, formatMessage);
