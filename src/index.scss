@@ -37,7 +37,7 @@
 }
 #root .layout .content {
   background-color: rgb(1, 123, 195);
-  padding: 30px 50px;
+  padding: 30px 10vw;
   border-radius: 8px;
   margin-top: calc(50vh - 210px);  
   box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
@@ -77,6 +77,12 @@
   transform: unset !important;  
 }
 
+
+#sign-in-form > div.h4, #login-title h4 {
+  font-style: italic;
+  color: #B6DFFA;
+  font-size: 30px;
+}
 #sign-in-form .pgn__form-group {
   margin-bottom: 10px;
 }
@@ -94,7 +100,9 @@
   font-size: medium;
 }
 
-
+#forgot-password, .pgn__form-control-floating-label-text  {
+  font-weight: 700;
+}
 .extra-large-screen-top-stripe {
   display:none !important;
 }

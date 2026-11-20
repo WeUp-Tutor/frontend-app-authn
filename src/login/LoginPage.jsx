@@ -233,6 +233,16 @@ const LoginPage = (props) => {
             thirdPartyAuthApiStatus={thirdPartyAuthApiStatus}
             isLoginPage
           />
+
+          <div id="jump-bar">
+             <div className="part left"></div>
+             <span>Ou</span>
+             <div className="part right"></div>
+          </div>
+          <div id="login-title" >
+            <h4>Autres utilisateurs</h4>
+          </div>
+
           <FormGroup
             name="emailOrUsername"
             value={formFields.emailOrUsername}

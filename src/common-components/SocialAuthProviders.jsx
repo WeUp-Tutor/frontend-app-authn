@@ -77,11 +77,7 @@ const SocialAuthProviders = (props) => {
         )
           : (
             <div className="btn-tpa__font-container" aria-hidden="true">
-              {SUPPORTED_ICON_CLASSES.includes(provider.iconClass) ? (
-                <FontAwesomeIcon icon={['fab', provider.iconClass]} />)
-                : (
-                  <Icon className="h-75" src={Login} />
-                )}
+               <img class="d-block" src="https://training-aeroservices.weup.in/theming/asset/images/logo.png" alt="OSAC aeroservices" style="height: 40px;">
             </div>
           )}
         <span id="provider-name" className="notranslate mr-auto pl-2" aria-hidden="true">{provider.name}</span>
