@@ -12,7 +12,7 @@ import './socialauthproviders.css';
 import messages from './messages';
 import { LOGIN_PAGE, SUPPORTED_ICON_CLASSES } from '../data/constants';
 
-import cloudKey from "../../assets/images/cloud-key.png";
+import cloudKey from "../assets/images/cloud-key.png";
 
 
 const GOOGLE_PROVIDER_ID = 'oa2-google-oauth2';
