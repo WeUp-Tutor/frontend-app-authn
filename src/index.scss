@@ -110,6 +110,10 @@
   display:none !important;
 }
 
+
+#saml-client-sso .btn-tpa__font-container {
+  padding-top: unset;
+}
 #jump-bar {
   display: flex;
   align-items: center;
