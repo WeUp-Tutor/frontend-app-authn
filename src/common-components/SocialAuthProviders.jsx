@@ -12,7 +12,11 @@ import './socialauthproviders.css';
 import messages from './messages';
 import { LOGIN_PAGE, SUPPORTED_ICON_CLASSES } from '../data/constants';
 
+import cloudKey from "../../assets/images/cloud-key.png";
+
+
 const GOOGLE_PROVIDER_ID = 'oa2-google-oauth2';
+
 
 const SocialAuthProviders = (props) => {
   const { formatMessage } = useIntl();
@@ -77,7 +81,12 @@ const SocialAuthProviders = (props) => {
         )
           : (
             <div className="btn-tpa__font-container" aria-hidden="true">
-               <img class="d-block" src="https://training-aeroservices.weup.in/theming/asset/images/logo.png" alt="OSAC aeroservices" style={{ height: '40px' }} />
+              <img
+                className="d-block"
+                src={cloudKey}
+                alt="OSAC aeroservices"
+                style={{ height: "40px" }}
+              />
             </div>
           )}
         <span id="provider-name" className="notranslate mr-auto pl-2" aria-hidden="true">{provider.name}</span>
