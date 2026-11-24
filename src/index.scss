@@ -39,7 +39,7 @@
   background-color: rgb(1, 123, 195);
   padding: 30px 5vw;
   border-radius: 8px;
-  margin-top: calc(50vh - 210px);  
+  margin-top: calc(50vh - 310px);  
   box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
 }
 
@@ -131,12 +131,14 @@
  
 
 
-.nav-item .ml-2 , #forget-password-form h2, #forget-password-form p {
+.nav-item .ml-2 , #forget-password-form h2, #forget-password-form p, #forget-password-form .pgn__transition-replace-enter-done {
   color: white !important;
 }
 #forget-password-form p:last-child span {
   margin-left: 5px;
-  color: white !important; 
+}
+#forget-password-form p:last-child span a {
+  color: var(--blue);
 }
 #saml-client-sso {
   border: none;
@@ -145,4 +147,5 @@
   font-size: medium;
   width: fit-content;
   font-weight: 700;
+  margin-right: unset !important;
 }
